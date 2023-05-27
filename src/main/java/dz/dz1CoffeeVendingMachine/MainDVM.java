@@ -40,23 +40,28 @@ public class MainDVM {
                     System.out.println("Такого напитка нет");
                 }
             } else {
+                label:
                 while (true) {
-                    System.out.println("1 - проверить кассу\n" +
-                            "2 - проверить запасы\n" +
-                            "3 - открыть отсек для пополнения\n" +
-                            "0 - выход ");
+                    System.out.println("""
+                            1 - проверить кассу
+                            2 - проверить запасы
+                            3 - открыть отсек для пополнения
+                            0 - выход\s""");
                     input = scanner.nextLine();
-                    if (input.equals("1")) {
-                        System.out.println(machine.getCash());
-                    } else if (input.equals("2")) {
-                        System.out.println(machine.checkStocks());
-                    } else if (input.equals("3")) {
-                        machine.restockDrink();
-                        System.out.println("Запасы сырья пополнены");
-                    } else if (input.equals("0")) {
-                        break;
+                    switch (input) {
+                        case "1":
+                            System.out.println(machine.getCash());
+                            break;
+                        case "2":
+                            System.out.println(machine.checkStocks());
+                            break;
+                        case "3":
+                            machine.restockDrink();
+                            System.out.println("Запасы сырья пополнены");
+                            break;
+                        case "0":
+                            break label;
                     }
-
                 }
             }
         }
