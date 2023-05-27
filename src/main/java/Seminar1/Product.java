@@ -4,13 +4,13 @@ public class Product {
     private final String pName;
     private final double pPrise;
 
-    public String getpName() {
-        return pName;
-    }
-
     public Product(String pName, double pPrise) {
         this.pName = pName;
         this.pPrise = pPrise;
+    }
+
+    public String getpName() {
+        return pName;
     }
 
     public double getpPrise() {

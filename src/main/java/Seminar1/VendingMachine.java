@@ -11,10 +11,6 @@ public class VendingMachine {
         return cash;
     }
 
-    public List<Product> getVending() {
-        return vending;
-    }
-
     public VendingMachine addProduct(Product prod) {
         vending.add(prod);
         return this;
