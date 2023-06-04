@@ -3,7 +3,6 @@ package dz.dz2Terrarium;
 
 import dz.dz2Terrarium.fauna.*;
 import dz.dz2Terrarium.skills.IsPoisonous;
-import dz.dz2Terrarium.skills.SwimSpeed;
 
 public class MainTerrarium {
     public static void main(String[] args) {

@@ -24,9 +24,9 @@ public class Main {
             System.out.println(user);
         }
 
-        User boss = new User("Dmitriy","Petrovich", 40);
+        User boss = new User("---Dmitriy","Petrovich", 40);
         boss.setPersonal(personal);
-        User littleBoss = new User("Oleg", "Petrovich",35);
+        User littleBoss = new User("---Oleg", "Petrovich",35);
         personal.addUser(littleBoss);
         littleBoss.setPersonal(new Personal().addUser(new User("Nikolay", "Petrov", 35)));
         System.out.println("=========");
@@ -36,12 +36,12 @@ public class Main {
 
         }
 
-        User middleBoss = new User("Michail", "Petrovich", 25);
+        User middleBoss = new User("---Michail", "Petrovich", 25);
         personal.addUser(middleBoss);
         middleBoss.setPersonal(new Personal()
                 .addUser(new User("Nikolay", "Petrov", 20))
                 .addUser(new User("Ivan", "Popov", 20)));
-
+        System.out.println("____");
         for (User user: company) {
             System.out.println(user);
         }
