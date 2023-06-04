@@ -1,9 +1,7 @@
 package dz.dz3MyClass;
 
-import seminar3.User;
-
 import java.util.Iterator;
-import java.util.List;
+
 import java.util.NoSuchElementException;
 
 public class LinkedList087<T> implements Iterable<T> {
@@ -148,8 +146,9 @@ public class LinkedList087<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<T>() {
+        return new Iterator<>() {
             private Element<T> current = head;
+
             @Override
             public boolean hasNext() {
                 return current != null;
