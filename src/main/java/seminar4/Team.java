@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Team<T extends Unit> implements Iterable<T>{
-    private List<T> team = new ArrayList<>();
+    private final List<T> team = new ArrayList<>();
 
     public void add(T element) {
         team.add(element);
