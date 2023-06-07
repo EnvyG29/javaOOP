@@ -6,12 +6,12 @@ import java.util.Random;
 
 public abstract class Unit{
     protected String name;
-    protected int healsPoint;
+    protected int healthPoint;
     protected Weapon weapon;
 
-    public Unit(String name, int healsPoint, Weapon weapon) {
+    public Unit(String name, int healthPoint, Weapon weapon) {
         this.name = name;
-        this.healsPoint = healsPoint;
+        this.healthPoint = healthPoint;
         this.weapon = weapon;
     }
 
@@ -19,16 +19,16 @@ public abstract class Unit{
         return name;
     }
 
-    public int getHealsPoint() {
-        return healsPoint;
+    public int getHealthPoint() {
+        return healthPoint;
     }
 
     public Weapon getWeapon() {
         return weapon;
     }
 
-    public Unit setHealsPoint(int healsPoint) {
-        this.healsPoint = healsPoint;
+    public Unit setHealthPoint(int healsPoint) {
+        this.healthPoint = healsPoint;
         return this;
     }
 
@@ -43,10 +43,14 @@ public abstract class Unit{
 
     }
 
-    public void rediceHealth(int damage){
-        healsPoint -= damage;
-        if (healsPoint < 0){
-            healsPoint = 0;
+    public void reduceHealth(int damage){
+        healthPoint -= damage;
+        if (healthPoint < 0){
+            healthPoint = 0;
         }
+    }
+    @Override
+    public String toString() {
+        return String.format("Name: %s, Weapon: %s, HealthPoint: %d", name, weapon, healthPoint);
     }
 }
