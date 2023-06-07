@@ -21,8 +21,6 @@ public class TeamBattle<T extends Unit> {
         while (reds.getTeamHealth() > 0 && greens.getTeamHealth() > 0) {
             for (Unit war1 : reds) {
                 for (Unit war2 : greens) {
-
-
                     damage = war1.hit();
                     def = war2.def();
                     hit = damage > def ? damage - def : 0;
@@ -34,7 +32,9 @@ public class TeamBattle<T extends Unit> {
                     hit = damage > def ? damage - def : 0;
                     System.out.printf("%s hit %s -> %d\n", war2.getName(), war1.getName(), hit);
                     war1.reduceHealth(hit);
+
                 }
+                System.out.println();
             }
         }
         System.out.println(reds.getTeamHealth());

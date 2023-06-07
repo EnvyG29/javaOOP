@@ -3,6 +3,7 @@ package seminar4;
 
 import seminar4.defenth.Leather;
 import seminar4.defenth.Mail;
+import seminar4.defenth.None;
 import seminar4.defenth.Plate;
 import seminar4.units.Archer;
 import seminar4.units.Infantryman;
@@ -22,12 +23,13 @@ public class Main {
 
         Team<Archer> teamArchers = new Team<>();
         teamArchers.add(new Archer("Jimmy", 100, new Crossbow(), new Mail()));
-        teamArchers.add(new Archer("Piter", 100, new Bow(), new Leather()));
+        teamArchers.add(new Archer("Piter", 100, new Bow(), new None()));
 
         Team<Infantryman> teamInfantryman = new Team<>();
         teamInfantryman.add(new Infantryman("James", 150, new Sword(), new Plate()));
 
         System.out.println(team1);
+        System.out.println("Минимальный показатель брони в команде " + team1.getTeamArmorMin());
         System.out.println("-----------");
         System.out.println(teamArchers);
         System.out.println("-----------");

@@ -26,6 +26,10 @@ public abstract class Unit{
         return healthPoint;
     }
 
+    public int getArmor() {
+        return armor.defense();
+    }
+
     public Weapon getWeapon() {
         return weapon;
     }

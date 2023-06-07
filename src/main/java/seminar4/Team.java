@@ -26,6 +26,15 @@ public class Team<T extends Unit> implements Iterable<T>{
         }
         return teamHealth;
     }
+    public int getTeamArmorMin() {
+        int min = team.get(0).getArmor();
+        for (T t : this) {
+            if (min > t.getArmor()){
+                min = t.getArmor();
+            }
+        }
+        return min;
+    }
 
     public int maxAttackDistance() {
         int maxDistance = 0;
