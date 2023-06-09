@@ -2,6 +2,7 @@ package seminar5.views;
 
 import seminar5.controllers.UserController;
 import seminar5.model.User;
+import seminar5.views.validator.NameValidator;
 
 import java.util.List;
 import java.util.Scanner;
@@ -73,9 +74,11 @@ public class ViewUser {
         userController.saveUser(user);
     }
 
-    private User getNewUser() {
+    private User getNewUser() throws Exception {
         String firstName = prompt("Имя: ");
+        new NameValidator(firstName).validate();
         String lastName = prompt("Фамилия: ");
+        new NameValidator(lastName).validate();
         String phone = prompt("Номер телефона: ");
         return new User(firstName, lastName, phone);
     }
