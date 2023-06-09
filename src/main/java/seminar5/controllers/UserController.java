@@ -13,7 +13,7 @@ public class UserController {
     }
 
     public void saveUser(User user) {
-        repository.CreateUser(user);
+        repository.createUser(user);
     }
 
     public List<User> readAllUsers(){
@@ -30,4 +30,31 @@ public class UserController {
 
         throw new Exception("User not found");
     }
+
+    public User updateUser(User user){
+        return repository.updateUser(user);
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
