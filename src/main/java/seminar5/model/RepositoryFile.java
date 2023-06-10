@@ -43,7 +43,8 @@ public class RepositoryFile implements Repository {
     @Override
     public void deleteUser(User user){
         List<User> users = getAllUsers();
-        users.removeIf(currentUser -> currentUser.getId().equals(user.getId()));
+        String id = user.getId();
+        users.removeIf(currentUser -> currentUser.getId().equals(id));
         fileOperation.saveAllLines(mapToString(users));
     }
 

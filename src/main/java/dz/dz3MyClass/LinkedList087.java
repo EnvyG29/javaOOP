@@ -146,15 +146,19 @@ public class LinkedList087<T> implements Iterable<T> {
 
     @Override
     public Iterator<T> iterator() {
-        return new Iterator<T>() {
+        return new Iterator<>() {
+            private Element<T> current = head;
+
             @Override
             public boolean hasNext() {
-                return false;
+                return current != null;
             }
 
             @Override
             public T next() {
-                return null;
+                T value = current.value;
+                current = current.next;
+                return value;
             }
         };
     }

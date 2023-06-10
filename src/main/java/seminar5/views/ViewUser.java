@@ -16,7 +16,7 @@ public class ViewUser {
     }
 
     public void run() {
-        Commands com = Commands.NONE;
+        Commands com;
 
         while (true) {
             String command = prompt("Введите команду: ");
@@ -24,21 +24,11 @@ public class ViewUser {
                 com = Commands.valueOf(command.toUpperCase());
                 if (com == Commands.EXIT) return;
                 switch (com) {
-                    case CREATE -> {
-                        createUser();
-                    }
-                    case READ -> {
-                        readUser();
-                    }
-                    case LIST -> {
-                        readList();
-                    }
-                    case UPDATE -> {
-                        updateUser();
-                    }
-                    case DELETE -> {
-                        deleteUser();
-                    }
+                    case CREATE -> createUser();
+                    case READ -> readUser();
+                    case LIST -> readList();
+                    case UPDATE -> updateUser();
+                    case DELETE -> deleteUser();
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
