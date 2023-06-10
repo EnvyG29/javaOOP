@@ -23,7 +23,6 @@ public class RepositoryFile implements Repository {
 
     @Override
     public String createUser(User user) {
-
         List<User> users = getAllUsers();
         int max = 0;
         for (User item : users) {
@@ -39,6 +38,13 @@ public class RepositoryFile implements Repository {
         List<String> lines = mapToString(users);
         fileOperation.saveAllLines(lines);
         return id;
+    }
+
+    @Override
+    public void deleteUser(User user){
+        List<User> users = getAllUsers();
+        users.removeIf(currentUser -> currentUser.getId().equals(user.getId()));
+        fileOperation.saveAllLines(mapToString(users));
     }
 
     private List<String> mapToString(List<User> users) {

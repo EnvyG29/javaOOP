@@ -27,12 +27,15 @@ public class UserController {
                 return user;
             }
         }
-
         throw new Exception("User not found");
     }
 
     public User updateUser(User user){
         return repository.updateUser(user);
+    }
+
+    public void deleteUser(User user){
+        repository.deleteUser(user);
     }
 }
 

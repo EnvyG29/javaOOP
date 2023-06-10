@@ -36,11 +36,20 @@ public class ViewUser {
                     case UPDATE -> {
                         updateUser();
                     }
+                    case DELETE -> {
+                        deleteUser();
+                    }
                 }
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
         }
+    }
+
+    private void deleteUser() throws Exception {
+        readList();
+        User user = getUser();
+        userController.deleteUser(user);
     }
 
     private void updateUser() throws Exception {
@@ -69,7 +78,7 @@ public class ViewUser {
         return userController.readUser(id);
     }
 
-    private void createUser() {
+    private void createUser() throws Exception {
         User user = getNewUser();
         userController.saveUser(user);
     }
